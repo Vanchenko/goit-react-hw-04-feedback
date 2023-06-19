@@ -15,13 +15,13 @@ export const App = () => {
   
   const btnClick = (evt) => {
     const name = evt.currentTarget.name;
-      if (name === 'good') {
+      if (name === 'Good') {
         setGood(good + 1);
       }
-      if (name === 'neutral') {
+      if (name === 'Neutral') {
         setNeutral(neutral + 1);
       }
-      if (name === 'bad') {
+      if (name === 'Bad') {
         setBad(bad + 1);
       }
     }
@@ -29,7 +29,10 @@ export const App = () => {
   return (
     <>
       <Section title="Please leave feedback">
-        <FeedbackOptions onLeaveFeedback={btnClick} />
+        <FeedbackOptions
+          options={['Good', 'Neutral', 'Bad']}
+          onLeaveFeedback={btnClick}
+        />
       </Section>
       <Section title="Statistics">
         {countTotalFeedback() === 0 ? (
